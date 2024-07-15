@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    // Define the quiz questions and answers
+    vector<string> questions = {
+        "What is the capital of France?",
+        "What is the largest planet in our solar system?",
+        "What is the rarest blood type?",
+        "What is the largest ocean on Earth?",
+        "What is the tallest mammal?"
+    };
+
+    vector<string> answers = {
+        "a) Paris\nb) London\nc) Berlin\nd) Madrid",
+        "a) Mars\nb) Jupiter\nc) Saturn\nd) Earth",
+        "a) A\nb) B\nc) AB\nd) O",
+        "a) Atlantic Ocean\nb) Indian Ocean\nc) Arctic Ocean\nd) Pacific Ocean",
+        "a) Elephant\nb) Giraffe\nc) Blue Whale\nd) Hippopotamus"
+    };
+
+    vector<char> correct_answers = {'a', 'b', 'c', 'd', 'b'};
+
+    // Initialize the score
+    int score = 0;
+
+    // Loop through the questions
+    for (int i = 0; i < questions.size(); i++) {
+        cout << questions[i] << endl;
+        cout << answers[i] << endl;
+
+        // Get the user's answer
+        char user_answer;
+        cout << "Enter your answer (a, b, c, or d): ";
+        cin >> user_answer;
+
+        // Check if the user's answer is correct
+        if (tolower(user_answer) == correct_answers[i]) {
+            cout << "Correct!" << endl;
+            score++;
+        } else {
+            cout << "Incorrect." << endl;
+        }
+
+        cout << endl;
+    }
+
+    // Display the final score
+    cout << "Your final score is: " << score << " out of " << questions.size() << endl;
+
+    return 0;
+}
